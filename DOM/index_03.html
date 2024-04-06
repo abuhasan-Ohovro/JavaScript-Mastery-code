@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-Color : #212121; color : whitesmoke">
+    <ul class="language">
+    <li>JavaScript</li>
+  
+</body>
+<script>
+    // function to add list item in the unordered-list. 
+    function addLanguage (langname){
+      const li = document.createElement('li');
+      li.innerHTML = `${langname}`
+      document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python");
+    addLanguage("C++");
+    addLanguage("Swift");
+    addLanguage("Typescript");
+// An optimised approached to add element in the list 
+    function optimalway (langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+    }
+    optimalway("Golang");
+    optimalway("Kotlin");
+
+// Here is the code to edit an element in the list 
+// suppose, we want to repalce python with Ruby.
+ const secondlang = document.querySelector("li:nth-child(2)")
+ console.log(secondlang)
+ const newitem = document.createElement('li')
+ newitem.textContent = "Ruby"
+ secondlang.replaceWith(newitem);
+// Another way 
+const firstLang = document.querySelector('li : first-child')
+firstLang.outerHTML = '<li>Ruby</li>'
+
+// Code to remove an element
+const lastName = document.querySelector('li:last-child')
+lastName.remove()
+
+</script>
+</html>
